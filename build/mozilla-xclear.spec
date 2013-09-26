@@ -6,13 +6,13 @@
 
 Name:           mozilla-xclear
 Version:        1.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Xclear extension for Mozilla Firefox
 
 Group:          Applications/Internet
 License:        GPLv2
 URL:            https://addons.mozilla.org/en/firefox/addon/xclear
-Source0:        http://releases.mozilla.org/pub/mozilla.org/addons/13078/xclear-%{version}-sm+fx.xpi
+Source0:        https://addons.mozilla.org/firefox/downloads/file/147529/xclear-1.8-sm+fx.xpi
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 #Requires:       firefox
@@ -39,6 +39,9 @@ rm -rf %{buildroot}
 %{inst_dir}
 
 %changelog
+* Thu Sep 26 2013 Ian Firns <firnsy@kororaproject.org>- 1.8-2
+- Updated upstream URL.
+
 * Sun Dec 11 2011 Chris Smart <chris@kororaa.org>- 1.8.1
 - Update to upstream 1.8 release.
 
