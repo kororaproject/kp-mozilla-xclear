@@ -12,7 +12,7 @@ Summary:        Xclear extension for Mozilla Firefox
 Group:          Applications/Internet
 License:        GPLv2
 URL:            https://addons.mozilla.org/en/firefox/addon/xclear
-Source0:        https://addons.mozilla.org/firefox/downloads/file/147529/xclear-1.8-sm+fx.xpi
+Source0:        https://addons.mozilla.org/firefox/downloads/file/147529/xclear-%{version}-sm+fx.xpi
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 #Requires:       firefox
