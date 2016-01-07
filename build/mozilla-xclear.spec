@@ -5,17 +5,16 @@
 %global inst_dir %{moz_extensions}/%{firefox_app_id}/%{src_ext_id}
 
 Name:           mozilla-xclear
-Version:        1.8
-Release:        2%{?dist}
+Version:        1.8.1
+Release:        1%{?dist}
 Summary:        Xclear extension for Mozilla Firefox
 
 Group:          Applications/Internet
 License:        GPLv2
 URL:            https://addons.mozilla.org/en/firefox/addon/xclear
-Source0:        https://addons.mozilla.org/firefox/downloads/file/147529/xclear-%{version}-sm+fx.xpi
+Source0:        https://addons.cdn.mozilla.net/user-media/addons/13078/xclear-1.8-sm+fx.xpi
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
-#Requires:       firefox
 
 %description
 Adds a 'clear text' button to fields like the address bar and search.
@@ -26,19 +25,20 @@ Adds a 'clear text' button to fields like the address bar and search.
 %build
 
 rm -rf %{buildroot}
-install -Dp -m 644 install.rdf %{buildroot}%{inst_dir}/install.rdf
-#sed -i s/4.0./9.0./ %{buildroot}%{inst_dir}/install.rdf
-install -Dp -m 644 chrome.manifest %{buildroot}%{inst_dir}/chrome.manifest
-install -Dp -m 644 chrome/xclear.jar %{buildroot}%{inst_dir}/chrome/xclear.jar
+install -Dp -m 644 %SOURCE0 %{buildroot}%{inst_dir}.xpi
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%{inst_dir}
+%{inst_dir}.xpi
 
 %changelog
+* Thu Jan 7 2016 Chris Smart <csmart@kororaproject.org>- 1.8.1-1
+- Update to 1.8.1
+- Use signed xpi from Mozilla so it works in Firefox 43
+
 * Thu Sep 26 2013 Ian Firns <firnsy@kororaproject.org>- 1.8-2
 - Updated upstream URL.
 
