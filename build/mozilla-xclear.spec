@@ -5,14 +5,14 @@
 %global inst_dir %{moz_extensions}/%{firefox_app_id}/%{src_ext_id}
 
 Name:           mozilla-xclear
-Version:        1.8.1
+Version:        1.8.2
 Release:        1%{?dist}
 Summary:        Xclear extension for Mozilla Firefox
 
 Group:          Applications/Internet
 License:        GPLv2
 URL:            https://addons.mozilla.org/en/firefox/addon/xclear
-Source0:        https://addons.cdn.mozilla.net/user-media/addons/13078/xclear-1.8-sm+fx.xpi
+Source0:        https://addons.cdn.mozilla.net/user-media/addons/13078/xclear-%{version}-fx+sm.xpi
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 
@@ -35,6 +35,9 @@ rm -rf %{buildroot}
 %{inst_dir}.xpi
 
 %changelog
+* Fri Dec 2 2016 Chris Smart <csmart@kororaproject.org>- 1.8.2-1
+- Update to 1.8.2
+
 * Thu Jan 7 2016 Chris Smart <csmart@kororaproject.org>- 1.8.1-1
 - Update to 1.8.1
 - Use signed xpi from Mozilla so it works in Firefox 43
